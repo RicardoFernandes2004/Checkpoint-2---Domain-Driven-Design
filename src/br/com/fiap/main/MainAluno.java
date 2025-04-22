@@ -14,41 +14,23 @@ public class MainAluno {
         int registroMatricula;
         String nomeCompleto;
 
-        try {
+
             // Aluno 1 - construtor vazio
             Aluno aluno1 = new Aluno();
-            registroMatricula = Integer.parseInt(JOptionPane.showInputDialog("Aluno 1 - Matrícula:"));
-            aluno1.setRegistroMatricula(registroMatricula);
+            aluno1.setRegistroMatricula(554597);
+            aluno1.setNomeCompleto("Ricardo Fernandes de Aquino");
+            dataDeNascimento = LocalDate.parse("02/08/2004", dtf);
+            aluno1.setDataDeNascimento(dataDeNascimento);
 
-            nomeCompleto = JOptionPane.showInputDialog("Aluno 1 - Nome completo:");
-            aluno1.setNomeCompleto(nomeCompleto);
-
-            try {
-                String dataStr = JOptionPane.showInputDialog("Aluno 1 - Data de nascimento (dd/MM/yyyy):");
-                dataDeNascimento = LocalDate.parse(dataStr, dtf);
-                aluno1.setDataDeNascimento(dataDeNascimento);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Data inválida para Aluno 1.");
-                System.exit(0);
-            }
 
             // Aluno 2 - construtor vazio
             Aluno aluno2 = new Aluno();
-            registroMatricula = Integer.parseInt(JOptionPane.showInputDialog("Aluno 2 - Matrícula:"));
-            aluno2.setRegistroMatricula(registroMatricula);
+            aluno2.setRegistroMatricula(556326);
+            aluno2.setNomeCompleto("Isadora de Morais Menegetthi");
+            dataDeNascimento = LocalDate.parse("01/01/2005", dtf);
+            aluno2.setDataDeNascimento(dataDeNascimento);
 
-            nomeCompleto = JOptionPane.showInputDialog("Aluno 2 - Nome completo:");
-            aluno2.setNomeCompleto(nomeCompleto);
-
-            try {
-                String dataStr = JOptionPane.showInputDialog("Aluno 2 - Data de nascimento (dd/MM/yyyy):");
-                dataDeNascimento = LocalDate.parse(dataStr, dtf);
-                aluno2.setDataDeNascimento(dataDeNascimento);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Data inválida para Aluno 2.");
-                System.exit(0);
-            }
-
+        try {
             // Aluno 3 - construtor com parâmetros
             Aluno aluno3;
             try {
@@ -77,7 +59,7 @@ public class MainAluno {
                 return;
             }
 
-            // Exibição dos dados com String.format
+            // Exibição dos dados
             LocalDate hoje = LocalDate.now();
             String resultado = String.format(
                     "=== Alunos Cadastrados ===\n\n" +
