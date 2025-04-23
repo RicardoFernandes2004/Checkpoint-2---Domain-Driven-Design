@@ -12,7 +12,7 @@ public class Aluno {
 
     public Aluno(){}
 
-    public Aluno(int registroMatricula, LocalDate dataDeNascimento, String nomeCompleto) throws Exception {
+    public Aluno(int registroMatricula, LocalDate dataDeNascimento, String nomeCompleto){
         setRegistroMatricula(registroMatricula);
         setDataDeNascimento(dataDeNascimento);
         this.nomeCompleto = nomeCompleto;
@@ -64,16 +64,11 @@ public class Aluno {
     }
     public String calcularIdadeCompleta(LocalDate dataAtual) {
         Period periodo = Period.between(dataDeNascimento, dataAtual);
-
         int anos = periodo.getYears();
         int meses = periodo.getMonths();
         int dias = periodo.getDays();
 
-        String textoAnos = anos + " " + (anos == 1 ? "ano" : "anos");
-        String textoMeses = meses + " " + (meses == 1 ? "mês" : "meses");
-        String textoDias = dias + " " + (dias == 1 ? "dia" : "dias");
-
-        return textoAnos + ", " + textoMeses + " e " + textoDias;
+        return String.format("Você tem %d ano(s),\n %d mes(es)\n e %d dia(s)", anos, meses, dias);
     }
 
 
