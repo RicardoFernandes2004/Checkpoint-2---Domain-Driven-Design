@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 public class MainAluno {
 
     public static void main(String[] args) {
+        // Formatador para dd/MM/yyyy
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate dataDeNascimento;
         int registroMatricula;
@@ -25,42 +26,36 @@ public class MainAluno {
 
             // Aluno 2 - construtor vazio
             Aluno aluno2 = new Aluno();
-            aluno2.setRegistroMatricula(556326);
-            aluno2.setNomeCompleto("Isadora de Morais Menegetthi");
-            dataDeNascimento = LocalDate.parse("01/01/2005", dtf);
+            aluno2.setRegistroMatricula(558971);
+            aluno2.setNomeCompleto("Khadija do Rocio Vieira de Lima");
+            dataDeNascimento = LocalDate.parse("08/11/2005", dtf);
             aluno2.setDataDeNascimento(dataDeNascimento);
 
+            // Leitura de dados do usuário
         try {
             // Aluno 3 - construtor com parâmetros
             Aluno aluno3;
-            try {
-                registroMatricula = Integer.parseInt(JOptionPane.showInputDialog("Aluno 3 - Matrícula:"));
-                nomeCompleto = JOptionPane.showInputDialog("Aluno 3 - Nome completo:");
-                String dataStr = JOptionPane.showInputDialog("Aluno 3 - Data de nascimento (dd/MM/yyyy):");
-                dataDeNascimento = LocalDate.parse(dataStr, dtf);
 
-                aluno3 = new Aluno(registroMatricula, dataDeNascimento, nomeCompleto);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Erro ao cadastrar Aluno 3: " + e.getMessage());
-                return;
-            }
+            registroMatricula = Integer.parseInt(JOptionPane.showInputDialog("Aluno 3 - Matrícula:"));
+            nomeCompleto = JOptionPane.showInputDialog("Aluno 3 - Nome completo:");
+            String dataStr3 = JOptionPane.showInputDialog("Aluno 3 - Data de nascimento (dd/MM/yyyy):");
+            dataDeNascimento = LocalDate.parse(dataStr3, dtf);
+
+            aluno3 = new Aluno(registroMatricula, dataDeNascimento, nomeCompleto);
 
             // Aluno 4 - construtor com parâmetros
             Aluno aluno4;
-            try {
-                registroMatricula = Integer.parseInt(JOptionPane.showInputDialog("Aluno 4 - Matrícula:"));
-                nomeCompleto = JOptionPane.showInputDialog("Aluno 4 - Nome completo:");
-                String dataStr = JOptionPane.showInputDialog("Aluno 4 - Data de nascimento (dd/MM/yyyy):");
-                dataDeNascimento = LocalDate.parse(dataStr, dtf);
 
-                aluno4 = new Aluno(registroMatricula, dataDeNascimento, nomeCompleto);
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Erro ao cadastrar Aluno 4: " + e.getMessage());
-                return;
-            }
+            registroMatricula = Integer.parseInt(JOptionPane.showInputDialog("Aluno 4 - Matrícula:"));
+            nomeCompleto = JOptionPane.showInputDialog("Aluno 4 - Nome completo:");
+            String dataStr4 = JOptionPane.showInputDialog("Aluno 4 - Data de nascimento (dd/MM/yyyy):");
+            dataDeNascimento = LocalDate.parse(dataStr4, dtf);
+
+            aluno4 = new Aluno(registroMatricula, dataDeNascimento, nomeCompleto);
+
 
             // Exibição dos dados
-            LocalDate hoje = LocalDate.now();
+            LocalDate hoje = LocalDate.now(); // Armazena a data atual
             String resultado = String.format(
                     "=== Alunos Cadastrados ===\n\n" +
                             "Aluno 1:\nMatrícula: %d\nNome: %s\nIdade: %s\n\n" +
@@ -76,7 +71,8 @@ public class MainAluno {
             JOptionPane.showMessageDialog(null, resultado);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getMessage());
+            JOptionPane.showMessageDialog(null,"Erro ao cadastrar Aluno, verifique as informações inseridas.");
+            System.exit(0);
         }
     }
 }

@@ -6,18 +6,21 @@ import java.time.Period;
 
 
 public class Aluno {
+    // Atributos
     private int registroMatricula;
     private String nomeCompleto;
     private LocalDate dataDeNascimento;
 
-    public Aluno(){}
+    // Construtores
+    public Aluno(){} // Construtor vazio
 
     public Aluno(int registroMatricula, LocalDate dataDeNascimento, String nomeCompleto){
         setRegistroMatricula(registroMatricula);
         setDataDeNascimento(dataDeNascimento);
         this.nomeCompleto = nomeCompleto;
-    }
+    } // Construtor com passagem de parãmetros
 
+    // Getters e setters
     public int getRegistroMatricula() {
         return registroMatricula;
     }
@@ -59,9 +62,12 @@ public class Aluno {
         }
     } catch (Exception e) {
         JOptionPane.showMessageDialog(null,e.getMessage());
+        System.exit(0);
     }
 
     }
+
+    // Métodos
     public String calcularIdadeCompleta(LocalDate dataAtual) {
         Period periodo = Period.between(dataDeNascimento, dataAtual);
         int anos = periodo.getYears();
