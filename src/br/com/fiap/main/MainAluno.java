@@ -1,3 +1,7 @@
+//Ricardo Fernandes de Aquino (RM - 554597)
+//Isadora de Morais Meneghetti (RM - 556326)
+//Khadija do Rocio Vieira de Lima (RM - 558971)
+
 package br.com.fiap.main;
 
 import br.com.fiap.bean.Aluno;
